@@ -6,25 +6,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="O Blog do Breno">
-    <title>Post Teste - O Blog do Breno</title>
-    <meta name="author" content="Breno Henrique de Lima Freitas">
+    <title>Criando um blog usando GitHub Pages, NodeJS e Hexo - O Blog do Breno</title>
+    <meta name="author" content="Breno Henrique">
     
-        <meta name="keywords" content="Breno Henrique,Web Developer,">
+        <meta name="keywords" content="Breno Henrique,javascript,hexo,blog,desenvolvimento,nodeJS,github">
     
+    
+        <link rel="icon" href="http://brenohq.github.io/assets/images/favicon.ico">
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="AloooChamaaa">
+    <meta name="description" content="Hoje eu ensino como hospedar um blog no serviço GitHub Pages. Vamos usar o Hexo, um módulo do NodeJS usado como framework para criação rápida e fácil de blogs. Posteriormente ensinarei como instalar e">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Post Teste">
-<meta property="og:url" content="http://brenohq.com/2016/07/03/Post-Teste/index.html">
+<meta property="og:title" content="Criando um blog usando GitHub Pages, NodeJS e Hexo">
+<meta property="og:url" content="http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/index.html">
 <meta property="og:site_name" content="O Blog do Breno">
-<meta property="og:description" content="AloooChamaaa">
-<meta property="og:updated_time" content="2016-07-03T05:36:18.976Z">
+<meta property="og:description" content="Hoje eu ensino como hospedar um blog no serviço GitHub Pages. Vamos usar o Hexo, um módulo do NodeJS usado como framework para criação rápida e fácil de blogs. Posteriormente ensinarei como instalar e">
+<meta property="og:updated_time" content="2016-07-03T17:18:46.294Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Post Teste">
-<meta name="twitter:description" content="AloooChamaaa">
+<meta name="twitter:title" content="Criando um blog usando GitHub Pages, NodeJS e Hexo">
+<meta name="twitter:description" content="Hoje eu ensino como hospedar um blog no serviço GitHub Pages. Vamos usar o Hexo, um módulo do NodeJS usado como framework para criação rápida e fácil de blogs. Posteriormente ensinarei como instalar e">
 <meta name="twitter:creator" content="@brenoiaa">
 <meta property="fb:app_id" content="1630237217305024">
     
@@ -34,6 +36,9 @@
     
         <meta property="og:image" content="http://www.brenohq.com/img/fotoBreno.jpg"/>
     
+    
+        <meta property="og:image" content="http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/github.pages.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/github.pages.jpg" />
     
     
     
@@ -85,7 +90,7 @@
             <a href="/#about">
                     <img class="sidebar-profile-picture" src="http://www.brenohq.com/img/fotoBreno.jpg"/>
             </a>
-            <span class="sidebar-profile-name">Breno Henrique de Lima Freitas</span>
+            <span class="sidebar-profile-name">Breno Henrique</span>
         </div>
     
     
@@ -106,48 +111,12 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/all-categories"
-                        
-                    >
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                    <span class="sidebar-button-desc">Categorias</span>
-                </a>
-        </li>
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link "
-                         href="/all-tags"
-                        
-                    >
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                    <span class="sidebar-button-desc">Tags</span>
-                </a>
-        </li>
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link "
                          href="/all-archives"
                         
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
                     <span class="sidebar-button-desc">Arquivo</span>
-                </a>
-        </li>
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link st-search-show-outputs"
-                         href="#search"
-                        
-                    >
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
-                    <span class="sidebar-button-desc">Pesquisar</span>
                 </a>
         </li>
         
@@ -208,23 +177,7 @@
                     <a  class="sidebar-button-link " href="mailto:contato@brenohq.com" target="_blank">
                 
                     <i class="sidebar-button-icon fa fa-lg fa-envelope-o"></i>
-                    <span class="sidebar-button-desc">Mail</span>
-                </a>
-        </li>
-        
-    </ul>
-    
-        <ul class="sidebar-buttons">
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link "
-                         href="/atom.xml"
-                        
-                    >
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
-                    <span class="sidebar-button-desc">RSS</span>
+                    <span class="sidebar-button-desc">E-Mail</span>
                 </a>
         </li>
         
@@ -235,20 +188,22 @@
             
             <div id="main" data-behavior="3"
                  class="
-                        hasCoverMetaIn
-                        ">
+                        hasCoverMetaOut
+                        hasCoverCaption">
                 
 <article class="post" itemscope itemType="http://schema.org/BlogPosting">
     
+        <span class="post-header-cover-caption caption">É hora de codar!</span>
     
-        <div class="post-header main-content-wrap text-left">
+    
+        <div class="post-header main-content-wrap text-center">
     
         <h1 class="post-title" itemprop="headline">
-            Post Teste
+            Criando um blog usando GitHub Pages, NodeJS e Hexo
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" datetime="2016-07-03T02:35:31-03:00">
+    <time itemprop="datePublished" datetime="2016-07-03T12:47:24-03:00">
 	
 		    03/07/2016
     	
@@ -260,7 +215,36 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h2 id="Alooo"><a href="#Alooo" class="headerlink" title="Alooo"></a>Alooo</h2><h3 id="Chamaaa"><a href="#Chamaaa" class="headerlink" title="Chamaaa"></a>Chamaaa</h3>
+            <!-- excerpt -->
+<h3 id="Voce-vai-precisar-instalar-algumas-coisas-antes-de-comecar"><a href="#Voce-vai-precisar-instalar-algumas-coisas-antes-de-comecar" class="headerlink" title="Você vai precisar instalar algumas coisas antes de começar:"></a>Você vai precisar instalar algumas coisas antes de começar:</h3><ol>
+<li><a href="http://nodejs.org/" target="_blank" rel="external">NodeJS</a></li>
+<li><a href="https://hexo.io/" target="_blank" rel="external">Hexo</a></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo</div></pre></td></tr></table></figure>
+<p>Você pode instalar globalmente com o argumento -g, mas se tiver alguma experiência pode colocar o pacote em seu package.json e depois dar um npm install no diretório do blog.</p>
+<h3 id="Criando-a-sua-GitHub-page"><a href="#Criando-a-sua-GitHub-page" class="headerlink" title="Criando a sua GitHub page"></a>Criando a sua GitHub page</h3><p>O GitHub disponibiliza um serviço de hospedagens para sites estáticos aqui: <a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a>.</p>
+<p>Crie um novo repositório com o nome nesse formato: seuusername.github.io</p>
+<p>Agora, com o repositório criado, é só clonar para a sua máquina.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> /caminho/para/o/seu/repositório</div></pre></td></tr></table></figure>
+<h3 id="Vamos-configurar-o-Hexo"><a href="#Vamos-configurar-o-Hexo" class="headerlink" title="Vamos configurar o Hexo"></a>Vamos configurar o Hexo</h3><p>Dentro do diretório que você acabou de clonar para a sua máquina, dê o seguinte comando:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div></pre></td></tr></table></figure></p>
+<p>Vamos abrir o arquivo de configuração _config.yml<br>Altere o valor desses quatro atributos básicos:</p>
+<ol>
+<li>title</li>
+<li>subtitle</li>
+<li>url</li>
+<li>author</li>
+</ol>
+<h3 id="Configurando-o-deploy-das-postagens"><a href="#Configurando-o-deploy-das-postagens" class="headerlink" title="Configurando o deploy das postagens"></a>Configurando o deploy das postagens</h3><p>Para fazer com que o deploys do GitHub funcionem, sua seção #Deployment deve-se parecer com isso:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: git@github.com:brenohq/brenohq.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<p>Agora é só instalar o deployer:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<h3 id="Criando-a-primeira-postagem"><a href="#Criando-a-primeira-postagem" class="headerlink" title="Criando a primeira postagem"></a>Criando a primeira postagem</h3><p>Para criar uma postagem é simples:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new <span class="string">"Post de Teste"</span></div></pre></td></tr></table></figure></p>
+<p>Pronto, você criou a primeira postagem. Agora vamos editá-la:<br>Dentro do diretório source foi criado um arquivo .md com a sua postagem.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: Post Teste</div><div class="line">date: 2016-07-03 13:58:33</div><div class="line">tags:</div><div class="line">---</div></pre></td></tr></table></figure>
+<p>Esse é seu post, você pode escrevê-lo como quiser, utilizando diversos recursos disponibilizados na <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">documentação completa do Hexo</a>.</p>
+<h3 id="Realizando-o-primeiro-deploy"><a href="#Realizando-o-primeiro-deploy" class="headerlink" title="Realizando o primeiro deploy"></a>Realizando o primeiro deploy</h3><p>Com a postagem editada, basta dar os seguintes comandos e seu blog vai estar atualizado.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure></p>
+<p>Pronto, agora seu blog está atualizado e online!</p>
+<p>Links Úteis:<br><a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a><br><a href="https://hexo.io/docs/" target="_blank" rel="external">Documentação do Hexo</a><br><a href="https://nodejs.org/en/docs/" target="_blank" rel="external">Documentação do NodeJS</a></p>
             
         </div>
     </div>
@@ -271,7 +255,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/07/03/Novo/"  data-tooltip="Novo">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">ANTERIOR</span>
@@ -279,7 +263,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/07/03/hello-world/" data-tooltip="Hello World">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">PRÓXIMO</span>
                     <i class="fa fa-angle-right"></i>
@@ -294,17 +278,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://brenohq.com/2016/07/03/Post-Teste/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://brenohq.com/2016/07/03/Post-Teste/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://brenohq.com/2016/07/03/Post-Teste/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -340,7 +324,7 @@
 
                 <footer id="footer" class="main-content-wrap">
     <span class="copyrights">
-        Copyrights &copy; 2016 Breno Henrique de Lima Freitas. All Rights Reserved.
+        Copyrights &copy; 2016 Breno Henrique. All Rights Reserved.
     </span>
 </footer>
 
@@ -352,7 +336,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/07/03/Novo/"  data-tooltip="Novo">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">ANTERIOR</span>
@@ -360,7 +344,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/07/03/hello-world/" data-tooltip="Hello World">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">PRÓXIMO</span>
                     <i class="fa fa-angle-right"></i>
@@ -375,17 +359,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://brenohq.com/2016/07/03/Post-Teste/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://brenohq.com/2016/07/03/Post-Teste/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://brenohq.com/2016/07/03/Post-Teste/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -411,18 +395,18 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://brenohq.com/2016/07/03/Post-Teste/">
-                <i class="fa fa-google-plus"></i><span class="">Partilhar no Google Plus</span>
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/">
+                <i class="fa fa-google-plus"></i><span class="">Compartilhar no Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://brenohq.com/2016/07/03/Post-Teste/">
-                <i class="fa fa-facebook-official"></i><span>SPartilhar no Facebook</span>
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/">
+                <i class="fa fa-facebook-official"></i><span>Compartilhar no Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://brenohq.com/2016/07/03/Post-Teste/">
-                <i class="fa fa-twitter"></i><span>Partilhar no Twitter</span>
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/">
+                <i class="fa fa-twitter"></i><span>Compartilhar no Twitter</span>
             </a>
         </li>
     </ul>
@@ -445,16 +429,16 @@
         
             <img id="about-card-picture" src="http://www.brenohq.com/img/fotoBreno.jpg"/>
         
-            <h4 id="about-card-name">Breno Henrique de Lima Freitas</h4>
+            <h4 id="about-card-name">Breno Henrique</h4>
         
-            <h5 id="about-card-bio"><p>author.bio</p>
+            <h5 id="about-card-bio"><p>UI/UX Designer &amp; Front-End Developer, escritor nas horas vagas.</p>
 </h5>
         
         
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>author.job</p>
+                <p>Trainee na CompJunior, freelancer em casa.</p>
 
             </h5>
         
@@ -469,7 +453,7 @@
 </div>
 
         
-<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+<div id="cover" style="background-image:url('/assets/images/cover-v1.2.0.jpg');"></div>
     </body>
     <!--SCRIPTS-->
 <script src="/assets/js/script-i4qo6jx6jji9fg0dftpya6ivemizsbow4fhow76d8dwpm7m1wbvi378ssumx.min.js"></script>
@@ -478,9 +462,9 @@
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'http://brenohq.com/2016/07/03/Post-Teste/';
+                 this.page.url = 'http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/';
                  
-                    this.page.identifier = '2016/07/03/Post-Teste/';
+                    this.page.identifier = 'fdsF34ff34';
                                   
              };
             (function() {
