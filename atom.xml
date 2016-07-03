@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://brenohq.github.io/"/>
-  <updated>2016-07-03T18:03:46.460Z</updated>
+  <updated>2016-07-03T18:35:54.635Z</updated>
   <id>http://brenohq.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://brenohq.github.io/2016/07/03/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/"/>
     <id>http://brenohq.github.io/2016/07/03/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/</id>
     <published>2016-07-03T15:47:24.000Z</published>
-    <updated>2016-07-03T18:03:46.460Z</updated>
+    <updated>2016-07-03T18:35:54.635Z</updated>
     
     <content type="html">&lt;!-- excerpt --&gt;
 &lt;h3 id=&quot;Voce-vai-precisar-instalar-algumas-coisas-antes-de-comecar&quot;&gt;&lt;a href=&quot;#Voce-vai-precisar-instalar-algumas-coisas-antes-de-comecar&quot; class=&quot;headerlink&quot; title=&quot;Você vai precisar instalar algumas coisas antes de começar:&quot;&gt;&lt;/a&gt;Você vai precisar instalar algumas coisas antes de começar:&lt;/h3&gt;&lt;ol&gt;
@@ -47,6 +47,7 @@
 &lt;h3 id=&quot;Realizando-o-primeiro-deploy&quot;&gt;&lt;a href=&quot;#Realizando-o-primeiro-deploy&quot; class=&quot;headerlink&quot; title=&quot;Realizando o primeiro deploy&quot;&gt;&lt;/a&gt;Realizando o primeiro deploy&lt;/h3&gt;&lt;p&gt;Com a postagem editada, basta dar os seguintes comandos e seu blog vai estar atualizado.&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo generate&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ hexo deploy&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;div class=&quot;alert success fa-check-circle&quot;&gt;&lt;p&gt;Pronto, agora seu blog está atualizado e online!&lt;/p&gt;
 &lt;/div&gt;
+&lt;div class=&quot;figure right&quot; style=&quot;width:150px;&quot;&gt;&lt;a class=&quot;fancybox&quot; href=&quot;https://avatars2.githubusercontent.com/u/6375567?v=3&amp;s=400&quot; title=&quot;&quot; data-fancybox-group=&quot;&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img class=&quot;fig-img&quot; src=&quot;https://avatars2.githubusercontent.com/u/6375567?v=3&amp;s=400&quot; style=&quot;width:150px;height:150px;&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;p&gt;Links Úteis:&lt;br&gt;&lt;a href=&quot;https://pages.github.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub Pages&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Documentação do Hexo&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://nodejs.org/en/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Documentação do NodeJS&lt;/a&gt;&lt;/p&gt;</content>
     
     <summary type="html">
