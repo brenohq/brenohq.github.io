@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>O Blog do Breno</title>
-  <subtitle>www.brenohq.com</subtitle>
+  <subtitle>http://www.brenohq.com/</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://brenohq.github.io/"/>
@@ -9,7 +9,7 @@
   <id>http://brenohq.github.io/</id>
   
   <author>
-    <name>Breno Henrique</name>
+    <name>Breno Henrique de Lima Freitas</name>
     
   </author>
   
