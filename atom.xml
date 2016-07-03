@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://brenohq.com/"/>
-  <updated>2016-07-03T06:05:29.268Z</updated>
+  <updated>2016-07-03T05:54:44.197Z</updated>
   <id>http://brenohq.com/</id>
   
   <author>
@@ -14,40 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Novo</title>
-    <link href="http://brenohq.com/2016/07/03/Novo/"/>
-    <id>http://brenohq.com/2016/07/03/Novo/</id>
-    <published>2016-07-03T06:04:52.000Z</published>
-    <updated>2016-07-03T06:05:29.268Z</updated>
-    
-    <content type="html"></content>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Post Teste</title>
-    <link href="http://brenohq.com/2016/07/03/Post-Teste/"/>
-    <id>http://brenohq.com/2016/07/03/Post-Teste/</id>
-    <published>2016-07-03T05:35:31.000Z</published>
-    <updated>2016-07-03T05:36:18.976Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;Alooo&quot;&gt;&lt;a href=&quot;#Alooo&quot; class=&quot;headerlink&quot; title=&quot;Alooo&quot;&gt;&lt;/a&gt;Alooo&lt;/h2&gt;&lt;h3 id=&quot;Chamaaa&quot;&gt;&lt;a href=&quot;#Chamaaa&quot; class=&quot;headerlink&quot; title=&quot;Chamaaa&quot;&gt;&lt;/a&gt;Chamaaa&lt;/h3&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Alooo&quot;&gt;&lt;a href=&quot;#Alooo&quot; class=&quot;headerlink&quot; title=&quot;Alooo&quot;&gt;&lt;/a&gt;Alooo&lt;/h2&gt;&lt;h3 id=&quot;Chamaaa&quot;&gt;&lt;a href=&quot;#Chamaaa&quot; class=&quot;headerlink&quot; title=
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>Hello World</title>
