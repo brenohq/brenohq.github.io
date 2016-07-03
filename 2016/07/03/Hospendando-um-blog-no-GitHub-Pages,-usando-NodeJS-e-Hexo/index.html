@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="O Blog do Breno">
-    <title>Criando um blog usando GitHub Pages, NodeJS e Hexo - O Blog do Breno</title>
+    <title>Hospendando um blog no GitHub Pages, usando NodeJS e Hexo - O Blog do Breno</title>
     <meta name="author" content="Breno Henrique">
     
-        <meta name="keywords" content="Breno Henrique,javascript,hexo,blog,desenvolvimento,nodeJS,github">
+        <meta name="keywords" content="Breno Henrique,javascript,hexo,blog,desenvolvimento,nodeJS,github,gratis">
     
     
         <link rel="icon" href="http://brenohq.github.io/assets/images/favicon.ico">
@@ -17,16 +17,16 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="Hoje eu ensino como hospedar um blog no serviço GitHub Pages. Vamos usar o Hexo, um módulo do NodeJS usado como framework para criação rápida e fácil de blogs. Posteriormente ensinarei como instalar e">
+    <meta name="description" content="Hoje eu ensino como hospedar um blog gratuitamente no serviço GitHub Pages. Vamos usar o Hexo, um módulo do NodeJS usado como framework para criação rápida e fácil de blogs. Posteriormente ensinarei c">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Criando um blog usando GitHub Pages, NodeJS e Hexo">
-<meta property="og:url" content="http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/index.html">
+<meta property="og:title" content="Hospendando um blog no GitHub Pages, usando NodeJS e Hexo">
+<meta property="og:url" content="http://brenohq.github.io/2016/07/03/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/index.html">
 <meta property="og:site_name" content="O Blog do Breno">
-<meta property="og:description" content="Hoje eu ensino como hospedar um blog no serviço GitHub Pages. Vamos usar o Hexo, um módulo do NodeJS usado como framework para criação rápida e fácil de blogs. Posteriormente ensinarei como instalar e">
-<meta property="og:updated_time" content="2016-07-03T17:18:46.294Z">
+<meta property="og:description" content="Hoje eu ensino como hospedar um blog gratuitamente no serviço GitHub Pages. Vamos usar o Hexo, um módulo do NodeJS usado como framework para criação rápida e fácil de blogs. Posteriormente ensinarei c">
+<meta property="og:updated_time" content="2016-07-03T18:03:46.460Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Criando um blog usando GitHub Pages, NodeJS e Hexo">
-<meta name="twitter:description" content="Hoje eu ensino como hospedar um blog no serviço GitHub Pages. Vamos usar o Hexo, um módulo do NodeJS usado como framework para criação rápida e fácil de blogs. Posteriormente ensinarei como instalar e">
+<meta name="twitter:title" content="Hospendando um blog no GitHub Pages, usando NodeJS e Hexo">
+<meta name="twitter:description" content="Hoje eu ensino como hospedar um blog gratuitamente no serviço GitHub Pages. Vamos usar o Hexo, um módulo do NodeJS usado como framework para criação rápida e fácil de blogs. Posteriormente ensinarei c">
 <meta name="twitter:creator" content="@brenoiaa">
 <meta property="fb:app_id" content="1630237217305024">
     
@@ -37,8 +37,8 @@
         <meta property="og:image" content="http://www.brenohq.com/img/fotoBreno.jpg"/>
     
     
-        <meta property="og:image" content="http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/github.pages.jpg"/>
-        <meta class="swiftype" name="image" data-type="enum" content="http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/github.pages.jpg" />
+        <meta property="og:image" content="http://tr3.cbsistatic.com/hub/i/r/2014/04/30/03480eee-dd54-4a74-bcf7-f2e0a5a7b524/resize/620x/2d42d9c040990d71a9dd6c4f160ede76/githuboctocatlogo043014.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://tr3.cbsistatic.com/hub/i/r/2014/04/30/03480eee-dd54-4a74-bcf7-f2e0a5a7b524/resize/620x/2d42d9c040990d71a9dd6c4f160ede76/githuboctocatlogo043014.jpg" />
     
     
     
@@ -199,7 +199,7 @@
         <div class="post-header main-content-wrap text-center">
     
         <h1 class="post-title" itemprop="headline">
-            Criando um blog usando GitHub Pages, NodeJS e Hexo
+            Hospendando um blog no GitHub Pages, usando NodeJS e Hexo
         </h1>
     
     <div class="post-meta">
@@ -224,26 +224,22 @@
 <p>Você pode instalar globalmente com o argumento -g, mas se tiver alguma experiência pode colocar o pacote em seu package.json e depois dar um npm install no diretório do blog.</p>
 <h3 id="Criando-a-sua-GitHub-page"><a href="#Criando-a-sua-GitHub-page" class="headerlink" title="Criando a sua GitHub page"></a>Criando a sua GitHub page</h3><p>O GitHub disponibiliza um serviço de hospedagens para sites estáticos aqui: <a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a>.</p>
 <p>Crie um novo repositório com o nome nesse formato: seuusername.github.io</p>
+<p>Atenção: O formato deve seguir esse padrão, caso contrário o github não considerará seu repositório como uma página válida.</p>
 <p>Agora, com o repositório criado, é só clonar para a sua máquina.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> /caminho/para/o/seu/repositório</div></pre></td></tr></table></figure>
-<h3 id="Vamos-configurar-o-Hexo"><a href="#Vamos-configurar-o-Hexo" class="headerlink" title="Vamos configurar o Hexo"></a>Vamos configurar o Hexo</h3><p>Dentro do diretório que você acabou de clonar para a sua máquina, dê o seguinte comando:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div></pre></td></tr></table></figure></p>
-<p>Vamos abrir o arquivo de configuração _config.yml<br>Altere o valor desses quatro atributos básicos:</p>
-<ol>
-<li>title</li>
-<li>subtitle</li>
-<li>url</li>
-<li>author</li>
-</ol>
-<h3 id="Configurando-o-deploy-das-postagens"><a href="#Configurando-o-deploy-das-postagens" class="headerlink" title="Configurando o deploy das postagens"></a>Configurando o deploy das postagens</h3><p>Para fazer com que o deploys do GitHub funcionem, sua seção #Deployment deve-se parecer com isso:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: git@github.com:brenohq/brenohq.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<h3 id="Vamos-configurar-o-Hexo"><a href="#Vamos-configurar-o-Hexo" class="headerlink" title="Vamos configurar o Hexo"></a>Vamos configurar o Hexo</h3><p>Dentro do diretório que você acabou de clonar para a sua máquina, dê os seguintes comandos:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div><div class="line">$ npm install</div></pre></td></tr></table></figure></p>
+<p>Vamos abrir o arquivo de configuração _config.yml.<br>Altere o valor desses quatro atributos básicos:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: O Blog do Breno</div><div class="line">subtitle:</div><div class="line">author: Breno Henrique</div><div class="line">language: pt-BR</div></pre></td></tr></table></figure></p>
+<h3 id="Configurando-o-deploy-das-postagens"><a href="#Configurando-o-deploy-das-postagens" class="headerlink" title="Configurando o deploy das postagens"></a>Configurando o deploy das postagens</h3><p>Para fazer com que o deploys do GitHub funcionem, sua seção <span class="highlight-text danger">#Deployment</span> deve-se parecer com isso:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: git@github.com:brenohq/brenohq.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
 <p>Agora é só instalar o deployer:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
 <h3 id="Criando-a-primeira-postagem"><a href="#Criando-a-primeira-postagem" class="headerlink" title="Criando a primeira postagem"></a>Criando a primeira postagem</h3><p>Para criar uma postagem é simples:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new <span class="string">"Post de Teste"</span></div></pre></td></tr></table></figure></p>
-<p>Pronto, você criou a primeira postagem. Agora vamos editá-la:<br>Dentro do diretório source foi criado um arquivo .md com a sua postagem.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: Post Teste</div><div class="line">date: 2016-07-03 13:58:33</div><div class="line">tags:</div><div class="line">---</div></pre></td></tr></table></figure>
+<p>Pronto, você criou a primeira postagem. Agora vamos editá-la:<br>Dentro do diretório “source” foi criado um arquivo .md com a sua postagem.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: Post Teste</div><div class="line">date: 2016-07-03 13:58:33</div><div class="line">tags:</div><div class="line">---</div></pre></td></tr></table></figure>
 <p>Esse é seu post, você pode escrevê-lo como quiser, utilizando diversos recursos disponibilizados na <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">documentação completa do Hexo</a>.</p>
 <h3 id="Realizando-o-primeiro-deploy"><a href="#Realizando-o-primeiro-deploy" class="headerlink" title="Realizando o primeiro deploy"></a>Realizando o primeiro deploy</h3><p>Com a postagem editada, basta dar os seguintes comandos e seu blog vai estar atualizado.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure></p>
-<p>Pronto, agora seu blog está atualizado e online!</p>
+<div class="alert success fa-check-circle"><p>Pronto, agora seu blog está atualizado e online!</p>
+</div>
 <p>Links Úteis:<br><a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a><br><a href="https://hexo.io/docs/" target="_blank" rel="external">Documentação do Hexo</a><br><a href="https://nodejs.org/en/docs/" target="_blank" rel="external">Documentação do NodeJS</a></p>
             
         </div>
@@ -278,17 +274,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://brenohq.github.io/2016/07/03/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://brenohq.github.io/2016/07/03/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://brenohq.github.io/2016/07/03/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -359,17 +355,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://brenohq.github.io/2016/07/03/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://brenohq.github.io/2016/07/03/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://brenohq.github.io/2016/07/03/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -395,17 +391,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://brenohq.github.io/2016/07/03/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/">
                 <i class="fa fa-google-plus"></i><span class="">Compartilhar no Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://brenohq.github.io/2016/07/03/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/">
                 <i class="fa fa-facebook-official"></i><span>Compartilhar no Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://brenohq.github.io/2016/07/03/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/">
                 <i class="fa fa-twitter"></i><span>Compartilhar no Twitter</span>
             </a>
         </li>
@@ -462,7 +458,7 @@
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'http://brenohq.github.io/2016/07/03/Usando-NodeJS-Hexo-Para-a-Criacao-de-Blogs/';
+                 this.page.url = 'http://brenohq.github.io/2016/07/03/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/';
                  
                     this.page.identifier = 'fdsF34ff34';
                                   
