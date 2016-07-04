@@ -24,7 +24,7 @@
 <meta property="og:site_name" content="O Blog do Breno">
 <meta property="og:description" content="Hoje eu ensino como hospedar um blog gratuitamente no serviço GitHub Pages. Vamos usar o Hexo, um módulo do NodeJS usado como framework para criação rápida e fácil de blogs. Posteriormente ensinarei c">
 <meta property="og:image" content="https://avatars2.githubusercontent.com/u/6375567?v=3&s=400">
-<meta property="og:updated_time" content="2016-07-04T02:05:35.750Z">
+<meta property="og:updated_time" content="2016-07-04T02:22:16.374Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hospendando um blog no GitHub Pages, usando NodeJS e Hexo">
 <meta name="twitter:description" content="Hoje eu ensino como hospedar um blog gratuitamente no serviço GitHub Pages. Vamos usar o Hexo, um módulo do NodeJS usado como framework para criação rápida e fácil de blogs. Posteriormente ensinarei c">
@@ -229,33 +229,42 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <!-- excerpt -->
+<hr>
 <h3 id="Voce-vai-precisar-instalar-algumas-coisas-antes-de-comecar"><a href="#Voce-vai-precisar-instalar-algumas-coisas-antes-de-comecar" class="headerlink" title="Você vai precisar instalar algumas coisas antes de começar:"></a>Você vai precisar instalar algumas coisas antes de começar:</h3><ol>
 <li><a href="http://nodejs.org/" target="_blank" rel="external">NodeJS</a></li>
 <li><a href="https://hexo.io/" target="_blank" rel="external">Hexo</a></li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo</div></pre></td></tr></table></figure>
-<p>Você pode instalar globalmente com o argumento -g, mas se tiver alguma experiência pode colocar o pacote em seu package.json e depois dar um npm install no diretório do blog.</p>
+<p>Você pode instalar globalmente com o argumento <code>-g</code>, mas se tiver alguma experiência pode colocar o pacote em seu package.json e depois dar um npm install no diretório do blog.</p>
+<hr>
 <h3 id="Criando-a-sua-GitHub-page"><a href="#Criando-a-sua-GitHub-page" class="headerlink" title="Criando a sua GitHub page"></a>Criando a sua GitHub page</h3><p>O GitHub disponibiliza um serviço de hospedagens para sites estáticos aqui: <a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a>.</p>
-<p>Crie um novo repositório com o nome nesse formato: seuusername.github.io</p>
-<p>Atenção: O formato deve seguir esse padrão, caso contrário o github não considerará seu repositório como uma página válida.</p>
+<p>Crie um novo repositório com o nome nesse formato: <strong>seuusername.github.io</strong></p>
+<p><strong>Atenção:</strong> O formato deve seguir esse padrão, caso contrário o github não considerará seu repositório como uma página válida.</p>
 <p>Agora, com o repositório criado, é só clonar para a sua máquina.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> /caminho/para/o/seu/repositório</div></pre></td></tr></table></figure>
+<hr>
 <h3 id="Vamos-configurar-o-Hexo"><a href="#Vamos-configurar-o-Hexo" class="headerlink" title="Vamos configurar o Hexo"></a>Vamos configurar o Hexo</h3><p>Dentro do diretório que você acabou de clonar para a sua máquina, dê os seguintes comandos:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div><div class="line">$ npm install</div></pre></td></tr></table></figure></p>
-<p>Vamos abrir o arquivo de configuração _config.yml.<br>Altere o valor desses quatro atributos básicos:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: O Blog do Breno</div><div class="line">subtitle:</div><div class="line">author: Breno Henrique</div><div class="line">language: pt-BR</div></pre></td></tr></table></figure></p>
+<p>Vamos abrir o arquivo de configuração <code>_config.yml</code>.<br>Altere o valor desses quatro atributos básicos:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: O Blog do Breno</div><div class="line">subtitle:</div><div class="line">author: Breno Henrique</div><div class="line">language: pt-BR</div></pre></td></tr></table></figure></p>
+<hr>
 <h3 id="Configurando-o-deploy-das-postagens"><a href="#Configurando-o-deploy-das-postagens" class="headerlink" title="Configurando o deploy das postagens"></a>Configurando o deploy das postagens</h3><p>Para fazer com que o deploys do GitHub funcionem, sua seção <span class="highlight-text danger">#Deployment</span> deve-se parecer com isso:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: git@github.com:brenohq/brenohq.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
 <p>Agora é só instalar o deployer:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<hr>
 <h3 id="Criando-a-primeira-postagem"><a href="#Criando-a-primeira-postagem" class="headerlink" title="Criando a primeira postagem"></a>Criando a primeira postagem</h3><p>Para criar uma postagem é simples:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new <span class="string">"Post de Teste"</span></div></pre></td></tr></table></figure></p>
-<p>Pronto, você criou a primeira postagem. Agora vamos editá-la:<br>Dentro do diretório “source” foi criado um arquivo .md com a sua postagem.</p>
+<p>Pronto, você criou a primeira postagem. Agora vamos editá-la:<br>Dentro do diretório <code>/source</code> foi criado um arquivo <code>.md</code> com a sua postagem.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: Post Teste</div><div class="line">date: 2016-07-03 13:58:33</div><div class="line">tags:</div><div class="line">---</div></pre></td></tr></table></figure>
 <p>Esse é seu post, você pode escrevê-lo como quiser, utilizando diversos recursos disponibilizados na <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">documentação completa do Hexo</a>.</p>
+<hr>
 <h3 id="Realizando-o-primeiro-deploy"><a href="#Realizando-o-primeiro-deploy" class="headerlink" title="Realizando o primeiro deploy"></a>Realizando o primeiro deploy</h3><p>Com a postagem editada, basta dar os seguintes comandos e seu blog vai estar atualizado.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure></p>
 <div class="alert success fa-check-circle"><p>Pronto, agora seu blog está atualizado e online!</p>
 </div>
 <div class="figure right" style="width:150px;"><a class="fancybox" href="https://avatars2.githubusercontent.com/u/6375567?v=3&s=400" title="" data-fancybox-group="" target="_blank" rel="external"><img class="fig-img" src="https://avatars2.githubusercontent.com/u/6375567?v=3&s=400" style="width:150px;height:150px;" alt=""></a></div>
+<blockquote>
 <p>Links Úteis:<br><a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a><br><a href="https://hexo.io/docs/" target="_blank" rel="external">Documentação do Hexo</a><br><a href="https://nodejs.org/en/docs/" target="_blank" rel="external">Documentação do NodeJS</a></p>
-<p>Acesse meu site e me conheça melhor: <a href="http://www.brenohq.com/" target="_blank" rel="external">brenohq.com</a></p>
+</blockquote>
+<hr>
+<h2 id="Sobre-o-autor-www-brenohq-com"><a href="#Sobre-o-autor-www-brenohq-com" class="headerlink" title=" Sobre o autor:  www.brenohq.com "></a><center> Sobre o autor: <br> <a href="http://www.brenohq.com/" target="_blank" rel="external">www.brenohq.com</a> </center></h2>
             
         </div>
     </div>
