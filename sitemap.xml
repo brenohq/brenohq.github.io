@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://brenohq.github.io/2016/07/12/hello-world/</loc>
-    
-    <lastmod>2016-07-13T01:33:36.578Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://brenohq.github.io/2016/07/03/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/</loc>
     
     <lastmod>2016-07-04T20:54:04.184Z</lastmod>
