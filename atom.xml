@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://brenohq.github.io/"/>
-  <updated>2016-09-09T16:20:12.566Z</updated>
+  <updated>2016-09-09T16:50:56.613Z</updated>
   <id>http://brenohq.github.io/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://brenohq.github.io/2016/09/09/Contribuindo-com-projetos-BOINC-no-seu-Arch-Linux/"/>
     <id>http://brenohq.github.io/2016/09/09/Contribuindo-com-projetos-BOINC-no-seu-Arch-Linux/</id>
     <published>2016-09-09T14:19:27.000Z</published>
-    <updated>2016-09-09T16:20:12.566Z</updated>
+    <updated>2016-09-09T16:50:56.613Z</updated>
     
-    <content type="html">&lt;!-- excerpt --&gt;
+    <content type="html">&lt;p&gt;O &lt;a href=&quot;http://boinc.berkeley.edu/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;BOINC&lt;/a&gt; (Berkeley Open Infrastucture For Network Computing) é uma modelo de infra-instrutura de software, que utiliza os conceitos de computação distribuída. A ideia é substituir a compra e manutenção de gigantescos clusters, pelo poder computacional, disponibilizado por você, de forma voluntária. Hoje vou ensinar como contribuir com esses projetos, usando o seu computador. Bora?&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;hr&gt;
 &lt;h2 id=&quot;Instalando-o-BOINC-Manager&quot;&gt;&lt;a href=&quot;#Instalando-o-BOINC-Manager&quot; class=&quot;headerlink&quot; title=&quot;Instalando o BOINC Manager&quot;&gt;&lt;/a&gt;Instalando o BOINC Manager&lt;/h2&gt;&lt;p&gt;Para instalar o cliente BOINC, basta o seguinte comando:&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ sudo pacman -S boinc&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -48,14 +49,14 @@
     
     <summary type="html">
     
-      &lt;p&gt;O &lt;a href=&quot;http://boinc.berkeley.edu/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;BOINC&lt;/a&gt; (Berkeley Open Infrastucture For Network Computing) é uma modelo de infra-instrutura de software, que utiliza os conceitos de computação distribuída. A ideia é substituir a compra e manutenção de gigantescos clusters, pelo poder computacional, disponibilizado por você, de forma voluntária. Hoje vou ensinar como contribuir com esses projetos, usando o seu computador. Bora?&lt;/p&gt;
+      &lt;p&gt;O &lt;a href=&quot;http://boinc.berkeley.edu/&quot;&gt;BOINC&lt;/a&gt; (Berkeley Open Infrastucture For Network Computing) é uma modelo de infra-instrutura de software, que utiliza os conceitos de computação distribuída. A ideia é substituir a compra e manutenção de gigantescos clusters, pelo poder computacional, disponibilizado por você, de forma voluntária. Hoje vou ensinar como contribuir com esses projetos, usando o seu computador. Bora?&lt;/p&gt;
     
     </summary>
     
     
-      <category term="BOINC" scheme="http://brenohq.github.io/tags/BOINC/"/>
-    
       <category term="OpenSource" scheme="http://brenohq.github.io/tags/OpenSource/"/>
+    
+      <category term="BOINC" scheme="http://brenohq.github.io/tags/BOINC/"/>
     
       <category term="Tutorial" scheme="http://brenohq.github.io/tags/Tutorial/"/>
     
