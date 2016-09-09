@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://brenohq.github.io/2016/09/09/Contribuindo-com-projetos-BOINC-no-seu-Arch-Linux/</loc>
+    
+    <lastmod>2016-09-09T16:20:12.566Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://brenohq.github.io/2016/07/03/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/</loc>
     
-    <lastmod>2016-09-02T13:43:58.907Z</lastmod>
+    <lastmod>2016-09-09T16:16:09.285Z</lastmod>
     
   </url>
   

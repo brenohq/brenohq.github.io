@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://brenohq.github.io/"/>
-  <updated>2016-09-02T13:43:58.907Z</updated>
+  <updated>2016-09-09T16:20:12.566Z</updated>
   <id>http://brenohq.github.io/</id>
   
   <author>
@@ -16,11 +16,57 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Contribuindo com projetos BOINC no seu Arch Linux</title>
+    <link href="http://brenohq.github.io/2016/09/09/Contribuindo-com-projetos-BOINC-no-seu-Arch-Linux/"/>
+    <id>http://brenohq.github.io/2016/09/09/Contribuindo-com-projetos-BOINC-no-seu-Arch-Linux/</id>
+    <published>2016-09-09T14:19:27.000Z</published>
+    <updated>2016-09-09T16:20:12.566Z</updated>
+    
+    <content type="html">&lt;!-- excerpt --&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;Instalando-o-BOINC-Manager&quot;&gt;&lt;a href=&quot;#Instalando-o-BOINC-Manager&quot; class=&quot;headerlink&quot; title=&quot;Instalando o BOINC Manager&quot;&gt;&lt;/a&gt;Instalando o BOINC Manager&lt;/h2&gt;&lt;p&gt;Para instalar o cliente BOINC, basta o seguinte comando:&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ sudo pacman -S boinc&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Com isso, você já tem o boinc instalado, porém é necessário fazer algumas alterações para que ele funcione corretamente:&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ &lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; ~/&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ ln &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; /var/lib/boinc/gui_rpc_auth.cfg gui_rpc_auth.cfg&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ sudo chmod 640 gui_rpc_auth.cfg&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Agora, é so iniciar a aplicação com o comando:&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ sudo boincmgr&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;div class=&quot;figure center&quot; style=&quot;width:300px;&quot;&gt;&lt;a class=&quot;fancybox&quot; href=&quot;boinc_manager.png&quot; title=&quot;Essa tela deverá aparecer.&quot; data-fancybox-group=&quot;&quot;&gt;&lt;img class=&quot;fig-img&quot; src=&quot;boinc_manager.png&quot; style=&quot;width:300px;&quot; alt=&quot;Essa tela deverá aparecer.&quot;&gt;&lt;/a&gt;&lt;span class=&quot;caption&quot;&gt;Essa tela deverá aparecer.&lt;/span&gt;&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;Contribuindo-pela-primeira-vez&quot;&gt;&lt;a href=&quot;#Contribuindo-pela-primeira-vez&quot; class=&quot;headerlink&quot; title=&quot;Contribuindo pela primeira vez&quot;&gt;&lt;/a&gt;Contribuindo pela primeira vez&lt;/h2&gt;&lt;p&gt;Logo após a sincronização, deve aparecer um botão &lt;span class=&quot;highlight-text danger&quot;&gt;&quot;Add Project&quot;&lt;/span&gt;. Clicando sobre ele, a seguinte tela será mostrada. &lt;br&gt;&lt;br&gt;
+
+&lt;div class=&quot;figure left&quot; style=&quot;width:500px;&quot;&gt;&lt;a class=&quot;fancybox&quot; href=&quot;escolha_de_projeto.png&quot; title=&quot;Escolha o seu projeto.&quot; data-fancybox-group=&quot;&quot;&gt;&lt;img class=&quot;fig-img&quot; src=&quot;escolha_de_projeto.png&quot; style=&quot;width:500px;&quot; alt=&quot;Escolha o seu projeto.&quot;&gt;&lt;/a&gt;&lt;span class=&quot;caption&quot;&gt;Escolha o seu projeto.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;clear:both;&quot;&gt;&lt;/div&gt;
+
+&lt;br&gt;Escolha o seu projeto e clique em &lt;span class=&quot;highlight-text danger&quot;&gt;&quot;Next&quot;&lt;/span&gt; você seguirá para a etapa de cadastro/login. Assim que o cadastro for concluído você já estará fornecendo seus recursos para o projeto.&lt;/p&gt;
+&lt;div class=&quot;figure center&quot; style=&quot;width:;&quot;&gt;&lt;a class=&quot;fancybox&quot; href=&quot;boinc_seti.png&quot; title=&quot;It&#39;s all over.&quot; data-fancybox-group=&quot;&quot;&gt;&lt;img class=&quot;fig-img&quot; src=&quot;boinc_seti.png&quot; alt=&quot;It&#39;s all over.&quot;&gt;&lt;/a&gt;&lt;span class=&quot;caption&quot;&gt;It&#39;s all over.&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;alert success fa-check-circle&quot;&gt;&lt;p&gt;Parabéns por contribuir com a ciência!&lt;/p&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Links Úteis:&lt;br&gt;&lt;a href=&quot;https://pt.wikipedia.org/wiki/BOINC&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Wikipedia do BOINC&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://boinc.berkeley.edu/projects.php&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;BOINC Projects&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;Sobre-o-autor-www-brenohq-com&quot;&gt;&lt;a href=&quot;#Sobre-o-autor-www-brenohq-com&quot; class=&quot;headerlink&quot; title=&quot; Sobre o autor:  www.brenohq.com &quot;&gt;&lt;/a&gt;&lt;center&gt; Sobre o autor: &lt;br&gt; &lt;a href=&quot;http://www.brenohq.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;www.brenohq.com&lt;/a&gt; &lt;/center&gt;&lt;/h2&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;O &lt;a href=&quot;http://boinc.berkeley.edu/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;BOINC&lt;/a&gt; (Berkeley Open Infrastucture For Network Computing) é uma modelo de infra-instrutura de software, que utiliza os conceitos de computação distribuída. A ideia é substituir a compra e manutenção de gigantescos clusters, pelo poder computacional, disponibilizado por você, de forma voluntária. Hoje vou ensinar como contribuir com esses projetos, usando o seu computador. Bora?&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="BOINC" scheme="http://brenohq.github.io/tags/BOINC/"/>
+    
+      <category term="OpenSource" scheme="http://brenohq.github.io/tags/OpenSource/"/>
+    
+      <category term="Tutorial" scheme="http://brenohq.github.io/tags/Tutorial/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hospendando um blog no GitHub Pages, usando NodeJS e Hexo</title>
     <link href="http://brenohq.github.io/2016/07/03/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/"/>
     <id>http://brenohq.github.io/2016/07/03/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/</id>
     <published>2016-07-03T15:47:24.000Z</published>
-    <updated>2016-09-02T13:43:58.907Z</updated>
+    <updated>2016-09-09T16:16:09.285Z</updated>
     
     <content type="html">&lt;!-- excerpt --&gt;
 &lt;hr&gt;
@@ -66,6 +112,12 @@
     
     </summary>
     
+    
+      <category term="NodeJS" scheme="http://brenohq.github.io/tags/NodeJS/"/>
+    
+      <category term="Blog" scheme="http://brenohq.github.io/tags/Blog/"/>
+    
+      <category term="Github" scheme="http://brenohq.github.io/tags/Github/"/>
     
   </entry>
   
