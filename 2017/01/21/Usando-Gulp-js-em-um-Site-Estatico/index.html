@@ -1,0 +1,513 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="O Blog do Breno">
+    <title>Usando Gulp.js em um Site Estático de Forma Simples - O Blog do Breno</title>
+    <meta name="author" content="Breno Henrique de Lima Freitas">
+    
+        <meta name="keywords" content="Breno Henrique,Blog,Tecnologia,Programação,Grátis,Software,Livre,Design,Desenvolvimento,Web,Task Runners,Javascript,Gulp,Otimização,CSS,Desenvolvimento,brenohq,Breno Henrique,brenohq.com,www.brenohq.com">
+    
+    
+        <link rel="icon" href="http://brenohq.github.io/assets/images/favicon.ico">
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="O Gulp, como o próprio site diz, é um kit de ferramentas para automatizar tarefas dolorosas e demoradas em nosso workflow. Nesse tutorial, vamos pegar um site e automatizar todo o seu processo de buil">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Usando Gulp.js em um Site Estático de Forma Simples">
+<meta property="og:url" content="http://brenohq.github.io/2017/01/21/Usando-Gulp-js-em-um-Site-Estatico/index.html">
+<meta property="og:site_name" content="O Blog do Breno">
+<meta property="og:description" content="O Gulp, como o próprio site diz, é um kit de ferramentas para automatizar tarefas dolorosas e demoradas em nosso workflow. Nesse tutorial, vamos pegar um site e automatizar todo o seu processo de buil">
+<meta property="og:updated_time" content="2017-01-21T21:22:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Usando Gulp.js em um Site Estático de Forma Simples">
+<meta name="twitter:description" content="O Gulp, como o próprio site diz, é um kit de ferramentas para automatizar tarefas dolorosas e demoradas em nosso workflow. Nesse tutorial, vamos pegar um site e automatizar todo o seu processo de buil">
+<meta name="twitter:creator" content="@brenoiaa">
+<meta property="fb:app_id" content="1630237217305024">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="http://www.brenohq.com/img/fotoBreno.jpg"/>
+    
+    
+        <meta property="og:image" content="https://avatars0.githubusercontent.com/u/6200624?v=3&amp;s=400"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://avatars0.githubusercontent.com/u/6200624?v=3&amp;s=400" />
+    
+    
+        <meta property="og:image" content="https://scotch.io/wp-content/uploads/2014/11/automate-tasks-gulpjs.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://scotch.io/wp-content/uploads/2014/11/automate-tasks-gulpjs.png" />
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-v8zgm6i2k1u4iklngywmf5hh8tsrnckel6bwa4ihkktynub5n9qfcdroyjfv.min.css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-80183790-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="1">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">O Blog do Breno</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+            <img class="header-picture" src="http://www.brenohq.com/img/fotoBreno.jpg"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="1">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                    <img class="sidebar-profile-picture" src="http://www.brenohq.com/img/fotoBreno.jpg"/>
+            </a>
+            <span class="sidebar-profile-name">Breno Henrique de Lima Freitas</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">Início</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Arquivo</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">Sobre</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/brenohq" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://twitter.com/brenoiaa" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                    <span class="sidebar-button-desc">Twitter</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://facebook.com/bhlfreitas" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-facebook"></i>
+                    <span class="sidebar-button-desc">Facebook</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://br.linkedin.com/in/breno-henrique-de-lima-freitas-a72901108" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+                    <span class="sidebar-button-desc">LinkedIn</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="mailto:contato@brenohq.com" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-envelope-o"></i>
+                    <span class="sidebar-button-desc">E-Mail</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+        <div class="post-header-cover
+                    text-center
+                    post-header-cover--partial"
+             style="background-image:url('https://scotch.io/wp-content/uploads/2014/11/automate-tasks-gulpjs.png');"
+             data-behavior="1">
+            
+        </div>
+
+            <div id="main" data-behavior="1"
+                 class="hasCover
+                        hasCoverMetaOut
+                        hasCoverCaption">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+        <span class="post-header-cover-caption caption">Hoje vamos aprender a adicionar o Gulp em nossos projetos!</span>
+    
+    
+        <div class="post-header main-content-wrap text-center">
+    
+        <h1 class="post-title" itemprop="headline">
+            Usando Gulp.js em um Site Estático de Forma Simples
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" datetime="2017-01-21T17:31:12-02:00">
+	
+		    21/01/2017
+    	
+    </time>
+    
+</div>
+
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>O <a href="gulpjs.com">Gulp</a>, como o próprio site diz, é um kit de ferramentas para automatizar tarefas dolorosas e demoradas em nosso workflow. Nesse tutorial, vamos pegar um site e automatizar todo o seu processo de build, desde tarefas como a otimização das imagens, até o bundle de nosso javascript/css. Sigam-me os bons! </p>
+<a id="more"></a>
+<hr>
+<h2 id="Requisitos"><a href="#Requisitos" class="headerlink" title="Requisitos"></a>Requisitos</h2><p>Para esse tutorial, vou assumir que vocês já estejam com o <a href="https://nodejs.org/en/" target="_blank" rel="external">Node</a> e o <a href="https://www.npmjs.com" target="_blank" rel="external">NPM</a> instalando e funcionando em vossas máquinas.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ node --version</div><div class="line">$ npm --version</div></pre></td></tr></table></figure>
+<h2 id="Instalando-o-Gulp-em-nossa-maquina"><a href="#Instalando-o-Gulp-em-nossa-maquina" class="headerlink" title="Instalando o Gulp em nossa máquina"></a>Instalando o Gulp em nossa máquina</h2><p>Para instalar o Gulp globalmente em nossa máquina, basta o seguinte comando:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo npm i -g gulp</div></pre></td></tr></table></figure>
+<p>Com isso, teremos o gulp a nosso dispor. Agora é hora de configurá-lo. Vou utilizar o diretório “MeuSite” como exemplo. Mas a aplicação real desse arquivo de configuração que criaremos, está sendo feita nesse meu <a href="https://github.com/brenohq/site4LEC" target="_blank" rel="external">repositório no GitHub</a>, onde desenvolvi um pequeno site para um evento sobre sofware livre que irá acontecer em minha universidade. Let’s do it!</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> MeuSite</div><div class="line">$ touch gulpfile.js</div></pre></td></tr></table></figure>
+<h2 id="Escrevendo-sua-primeira-task"><a href="#Escrevendo-sua-primeira-task" class="headerlink" title="Escrevendo sua primeira task"></a>Escrevendo sua primeira task</h2><p>Agora, sem lero lero, vamos abrir o arquivo e começar a codar. Vamos adicionar o seguinte trecho em nosso arquivo.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span>  gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),</div><div class="line">       concat = <span class="built_in">require</span>(<span class="string">'gulp-concat'</span>);</div><div class="line"></div><div class="line">gulp.task(<span class="string">'pack-js'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> gulp.src([<span class="string">'caminho_para_arquivo1.js'</span>, <span class="string">'diretorio/*.js'</span>, <span class="string">'diretorio/**/*.js'</span>])</div><div class="line">    .pipe(concat(<span class="string">'bundle.js'</span>))</div><div class="line">    .pipe(gulp.dest(<span class="string">'public/js'</span>));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>Esse código é responsável por concatenar todos os arquivos que forem passados no array como primeiro argumento em gulp.src(), o resultado poderá ser observado em public/js/bundle.js. Agora vamos instalar o gulp-concat, também vamos colocá-lo nas dependências de desenvolvimento.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm i --save-dev gulp-concat</div></pre></td></tr></table></figure>
+<p>Depois basta executar nossa tarefa com o comando a seguir:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gulp pack-js</div></pre></td></tr></table></figure>
+<p>Demais não é?</p>
+<hr>
+<h2 id="Escrevendo-outras-tarefas"><a href="#Escrevendo-outras-tarefas" class="headerlink" title="Escrevendo outras tarefas"></a>Escrevendo outras tarefas</h2><p>Agora vou acelerar um pouco mais. Vamos adicionar todo o código a seguir, mas não se preocupe, vou explicá-lo por partes logo em seguida. Vamos lá!</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Importando todos os plugins que utilizei nesse site</span></div><div class="line"><span class="keyword">const</span></div><div class="line">  gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),</div><div class="line">  concat = <span class="built_in">require</span>(<span class="string">'gulp-concat'</span>),</div><div class="line">  imagemin = <span class="built_in">require</span>(<span class="string">'gulp-imagemin'</span>),</div><div class="line">  rename = <span class="built_in">require</span>(<span class="string">'gulp-rename'</span>),</div><div class="line">  uncss = <span class="built_in">require</span>(<span class="string">'gulp-uncss'</span>),</div><div class="line">  htmlmin = <span class="built_in">require</span>(<span class="string">'gulp-htmlmin'</span>),</div><div class="line">  size = <span class="built_in">require</span>(<span class="string">'gulp-size'</span>),</div><div class="line">  sizereport = <span class="built_in">require</span>(<span class="string">'gulp-sizereport'</span>),</div><div class="line">  runSequence = <span class="built_in">require</span>(<span class="string">'run-sequence'</span>);</div><div class="line"></div><div class="line">gulp.task(<span class="string">'pack-js'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">// Fazendo o bundle de todos arquivos javascript</span></div><div class="line">  <span class="keyword">return</span> gulp.src([<span class="string">'node_modules/jquery/dist/jquery.min.js'</span>, <span class="string">'node_modules/jquery-scrollify/jquery.scrollify.min.js'</span>, <span class="string">'src/js/scroll.js'</span>, <span class="string">'src/js/nav.js'</span>])</div><div class="line">    .pipe(concat(<span class="string">'bundle.js'</span>))</div><div class="line">    .pipe(gulp.dest(<span class="string">'public/js'</span>));</div><div class="line">&#125;);</div><div class="line"></div><div class="line">gulp.task(<span class="string">'pack-css'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">// Concatenando também todos os arquivos CSS</span></div><div class="line">  <span class="keyword">return</span> gulp.src([<span class="string">'src/css/reset.css'</span>, <span class="string">'src/css/bulma.css'</span>, <span class="string">'src/css/style.css'</span>])</div><div class="line">    .pipe(concat(<span class="string">'stylesheet.css'</span>))</div><div class="line">    .pipe(gulp.dest(<span class="string">'public/css'</span>));</div><div class="line">&#125;);</div><div class="line"></div><div class="line">gulp.task(<span class="string">'imagemin'</span>, () =&gt;</div><div class="line">  <span class="comment">// Otimizando as imagens do site</span></div><div class="line">  gulp.src(<span class="string">'src/img/**/*'</span>)</div><div class="line">  .pipe(imagemin())</div><div class="line">  .pipe(gulp.dest(<span class="string">'public/img'</span>))</div><div class="line">);</div><div class="line"></div><div class="line">gulp.task(<span class="string">'minify-html'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">// Minificando o index.html</span></div><div class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'src/index.html'</span>)</div><div class="line">    .pipe(htmlmin(&#123;</div><div class="line">      collapseWhitespace: <span class="literal">true</span></div><div class="line">    &#125;))</div><div class="line">    .pipe(gulp.dest(<span class="string">'public/'</span>));</div><div class="line">&#125;);</div><div class="line"></div><div class="line">gulp.task(<span class="string">'remove-unused-css'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">// Removendo do nosso CSS todos as definições que não são necessárias em nosso projeto</span></div><div class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'public/css/stylesheet.css'</span>)</div><div class="line">    .pipe(uncss(&#123;</div><div class="line">      html: [<span class="string">'src/index.html'</span>]</div><div class="line">    &#125;))</div><div class="line">    .pipe(gulp.dest(<span class="string">'./public/css/stylesheet.min.css'</span>));</div><div class="line">&#125;);</div><div class="line"></div><div class="line">gulp.task(<span class="string">'sizereport'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">// Exibe uma mensagem contendo informações sobre o tamanho de nossos arquivos pós otimizações</span></div><div class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./public/**/*'</span>)</div><div class="line">    .pipe(sizereport());</div><div class="line">&#125;);</div><div class="line"></div><div class="line">gulp.task(<span class="string">'default'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">done</span>) </span>&#123;</div><div class="line">  <span class="comment">// Task que será executada quando dermos o comando "gulp"</span></div><div class="line">  runSequence(<span class="string">'pack-js'</span>, <span class="string">'pack-css'</span>, <span class="string">'imagemin'</span>, <span class="string">'minify-html'</span>, <span class="string">'remove-unused-css'</span>, <span class="string">'sizereport'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    done();</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>Nas primeiras linhas desse código, definimos os plugins que estamos utilizando. Você pode encontrá-los facilmente fazendo uma busca no <a href="https://www.npmjs.com/search?q=gulp-imagemin" target="_blank" rel="external">Npm</a>. Acredito que você tenha percebido como funciona a separação de tarefas no gulp, e como será fácil usar os plugins que você desejar.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gulp.task(<span class="string">'nome-da-tarefa'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line"><span class="comment">// Chamadas dos plugin, mensagens a serem exibidas, e escrita dos arquivos otimizados</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<hr>
+<p>Por último, é importante explicar a forma que podemos executar nossas tarefas de forma síncrona, com o plugin <a href="https://www.npmjs.com/package/run-sequence" target="_blank" rel="external">run-sequence</a>. </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">gulp.task(<span class="string">'default'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">done</span>) </span>&#123;</div><div class="line">  <span class="comment">// Task que será executada quando dermos o comando "gulp"</span></div><div class="line">  runSequence(<span class="string">'pack-js'</span>, <span class="string">'pack-css'</span>, <span class="string">'imagemin'</span>, <span class="string">'minify-html'</span>, <span class="string">'remove-unused-css'</span>, <span class="string">'sizereport'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    done();</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>Como definimos o nome dessa task como “default”, ela poderá ser executada com o comando <span class="highlight-text danger">gulp</span> diretamente. Nesse exemplo que utilizei, o build do site é feito para o diretório /public, fique livre para modificar o código para o seu projeto.</p>
+<p>That’s all folks! Obrigado!</p>
+<blockquote>
+<p>Links Úteis:<br><a href="bulma.io">Framework Usado Nesse Exemplo</a><br><a href="https://medium.freecodecamp.com/what-to-learn-in-2017-if-youre-a-frontend-developer-b6cfef46effd#.f9xd9e32r" target="_blank" rel="external">2017 is the year that front-end developers should go back and master the basics</a><br><a href="https://brenohq.github.io/2016/07/03/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/">Hospendando um blog no GitHub Pages, usando NodeJS e Hexo</a></p>
+</blockquote>
+<hr>
+<h2 id="Sobre-o-autor-www-brenohq-com"><a href="#Sobre-o-autor-www-brenohq-com" class="headerlink" title=" Sobre o autor:  www.brenohq.com "></a><center> Sobre o autor: <br> <a href="http://www.brenohq.com/" target="_blank" rel="external">www.brenohq.com</a> </center></h2>
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">ETIQUETADO em</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/JS/">JS</a> <a class="tag tag--primary tag--small t-link" href="/tags/OpenSource/">OpenSource</a> <a class="tag tag--primary tag--small t-link" href="/tags/Task-Runners/">Task Runners</a> <a class="tag tag--primary tag--small t-link" href="/tags/Tutorial/">Tutorial</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">ANTERIOR</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/09/Contribuindo-com-projetos-BOINC-no-seu-Arch-Linux/" data-tooltip="Contribuindo com projetos BOINC no seu Arch Linux">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">PRÓXIMO</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://brenohq.github.io/2017/01/21/Usando-Gulp-js-em-um-Site-Estatico/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://brenohq.github.io/2017/01/21/Usando-Gulp-js-em-um-Site-Estatico/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://brenohq.github.io/2017/01/21/Usando-Gulp-js-em-um-Site-Estatico/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2017 Breno Henrique de Lima Freitas. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">ANTERIOR</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/09/Contribuindo-com-projetos-BOINC-no-seu-Arch-Linux/" data-tooltip="Contribuindo com projetos BOINC no seu Arch Linux">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">PRÓXIMO</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://brenohq.github.io/2017/01/21/Usando-Gulp-js-em-um-Site-Estatico/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://brenohq.github.io/2017/01/21/Usando-Gulp-js-em-um-Site-Estatico/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://brenohq.github.io/2017/01/21/Usando-Gulp-js-em-um-Site-Estatico/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://brenohq.github.io/2017/01/21/Usando-Gulp-js-em-um-Site-Estatico/">
+                <i class="fa fa-google-plus"></i><span class="">Compartilhar no Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://brenohq.github.io/2017/01/21/Usando-Gulp-js-em-um-Site-Estatico/">
+                <i class="fa fa-facebook-official"></i><span>Compartilhar no Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://brenohq.github.io/2017/01/21/Usando-Gulp-js-em-um-Site-Estatico/">
+                <i class="fa fa-twitter"></i><span>Compartilhar no Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="http://www.brenohq.com/img/fotoBreno.jpg"/>
+        
+            <h4 id="about-card-name">Breno Henrique de Lima Freitas</h4>
+        
+            <h5 id="about-card-bio"><p><center>UI/UX Designer &amp; Front-End Developer</center><a href="http://www.brenohq.com">brenohq.com</a></p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Front-End Developer na <a href="http://compjunior.com.br/">CompJunior</a>, freelancer em casa.</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Lavras - Minas Gerais
+            </h5>
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover-v1.2.0.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script-ek6nsgdgepzd2fthcsvhxh6ihvnzrhosgdgp86eqkipqnmaf01seeedr1oxm.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'http://brenohq.github.io/2017/01/21/Usando-Gulp-js-em-um-Site-Estatico/';
+                 
+                    this.page.identifier = 'fdsF34ff34';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'brenohq';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+
+
+
+</html>
