@@ -23,7 +23,7 @@
 <meta property="og:url" content="http://brenohq.github.io/2017/01/21/Usando-Gulp-js-em-um-Site-Estatico/index.html">
 <meta property="og:site_name" content="O Blog do Breno">
 <meta property="og:description" content="O Gulp, como o próprio site diz, é um kit de ferramentas para automatizar tarefas dolorosas e demoradas em nosso workflow. Nesse tutorial, vamos pegar um site e automatizar todo o seu processo de buil">
-<meta property="og:updated_time" content="2017-01-21T21:22:40.000Z">
+<meta property="og:updated_time" content="2017-01-22T19:52:29.276Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Usando Gulp.js em um Site Estático de Forma Simples">
 <meta name="twitter:description" content="O Gulp, como o próprio site diz, é um kit de ferramentas para automatizar tarefas dolorosas e demoradas em nosso workflow. Nesse tutorial, vamos pegar um site e automatizar todo o seu processo de buil">
@@ -46,7 +46,10 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-v8zgm6i2k1u4iklngywmf5hh8tsrnckel6bwa4ihkktynub5n9qfcdroyjfv.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
     <script type="text/javascript">
@@ -240,15 +243,16 @@
             <p>O <a href="gulpjs.com">Gulp</a>, como o próprio site diz, é um kit de ferramentas para automatizar tarefas dolorosas e demoradas em nosso workflow. Nesse tutorial, vamos pegar um site e automatizar todo o seu processo de build, desde tarefas como a otimização das imagens, até o bundle de nosso javascript/css. Sigam-me os bons! </p>
 <a id="more"></a>
 <hr>
-<h2 id="Requisitos"><a href="#Requisitos" class="headerlink" title="Requisitos"></a>Requisitos</h2><p>Para esse tutorial, vou assumir que vocês já estejam com o <a href="https://nodejs.org/en/" target="_blank" rel="external">Node</a> e o <a href="https://www.npmjs.com" target="_blank" rel="external">NPM</a> instalando e funcionando em vossas máquinas.</p>
+<h2 id="Requisitos"><a href="#Requisitos" class="headerlink" title="Requisitos"></a>Requisitos</h2><p>Para esse tutorial, vou assumir que vocês já estejam com o <a href="https://nodejs.org/en/" target="_blank" rel="external">Node</a> e o <a href="https://www.npmjs.com" target="_blank" rel="external">NPM</a> instalado e funcionando em vossas máquinas.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ node --version</div><div class="line">$ npm --version</div></pre></td></tr></table></figure>
 <h2 id="Instalando-o-Gulp-em-nossa-maquina"><a href="#Instalando-o-Gulp-em-nossa-maquina" class="headerlink" title="Instalando o Gulp em nossa máquina"></a>Instalando o Gulp em nossa máquina</h2><p>Para instalar o Gulp globalmente em nossa máquina, basta o seguinte comando:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo npm i -g gulp</div></pre></td></tr></table></figure>
 <p>Com isso, teremos o gulp a nosso dispor. Agora é hora de configurá-lo. Vou utilizar o diretório “MeuSite” como exemplo. Mas a aplicação real desse arquivo de configuração que criaremos, está sendo feita nesse meu <a href="https://github.com/brenohq/site4LEC" target="_blank" rel="external">repositório no GitHub</a>, onde desenvolvi um pequeno site para um evento sobre sofware livre que irá acontecer em minha universidade. Let’s do it!</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> MeuSite</div><div class="line">$ touch gulpfile.js</div></pre></td></tr></table></figure>
 <h2 id="Escrevendo-sua-primeira-task"><a href="#Escrevendo-sua-primeira-task" class="headerlink" title="Escrevendo sua primeira task"></a>Escrevendo sua primeira task</h2><p>Agora, sem lero lero, vamos abrir o arquivo e começar a codar. Vamos adicionar o seguinte trecho em nosso arquivo.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span>  gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),</div><div class="line">       concat = <span class="built_in">require</span>(<span class="string">'gulp-concat'</span>);</div><div class="line"></div><div class="line">gulp.task(<span class="string">'pack-js'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> gulp.src([<span class="string">'caminho_para_arquivo1.js'</span>, <span class="string">'diretorio/*.js'</span>, <span class="string">'diretorio/**/*.js'</span>])</div><div class="line">    .pipe(concat(<span class="string">'bundle.js'</span>))</div><div class="line">    .pipe(gulp.dest(<span class="string">'public/js'</span>));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>Esse código é responsável por concatenar todos os arquivos que forem passados no array como primeiro argumento em gulp.src(), o resultado poderá ser observado em public/js/bundle.js. Agora vamos instalar o gulp-concat, também vamos colocá-lo nas dependências de desenvolvimento.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span>  gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),</div><div class="line">       concat = <span class="built_in">require</span>(<span class="string">'gulp-concat'</span>);</div><div class="line"></div><div class="line">gulp.task(<span class="string">'pack-js'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> gulp.src([<span class="string">'caminho_para_arquivo1.js'</span>, <span class="string">'diretorio/*.js'</span>, <span class="string">'diretorio/**/*.js'</span>]) <span class="comment">// Escolha os arquivos/diretórios</span></div><div class="line">    .pipe(concat(<span class="string">'bundle.js'</span>)) <span class="comment">// O gulp-concat sendo usado </span></div><div class="line">    .pipe(gulp.dest(<span class="string">'public/js'</span>)); <span class="comment">// Resultado em public/js/bundle.js</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>Esse código é responsável por concatenar todos os arquivos que forem passados no array como primeiro argumento em gulp.src(), o resultado poderá ser observado em public/js/bundle.js. Você pode passar tanto arquivos específicos, como diretórios inteiros.</p>
+<p>Agora vamos instalar o gulp-concat, também vamos colocá-lo nas dependências de desenvolvimento.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm i --save-dev gulp-concat</div></pre></td></tr></table></figure>
 <p>Depois basta executar nossa tarefa com o comando a seguir:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gulp pack-js</div></pre></td></tr></table></figure>
@@ -262,7 +266,8 @@
 <p>Por último, é importante explicar a forma que podemos executar nossas tarefas de forma síncrona, com o plugin <a href="https://www.npmjs.com/package/run-sequence" target="_blank" rel="external">run-sequence</a>. </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">gulp.task(<span class="string">'default'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">done</span>) </span>&#123;</div><div class="line">  <span class="comment">// Task que será executada quando dermos o comando "gulp"</span></div><div class="line">  runSequence(<span class="string">'pack-js'</span>, <span class="string">'pack-css'</span>, <span class="string">'imagemin'</span>, <span class="string">'minify-html'</span>, <span class="string">'remove-unused-css'</span>, <span class="string">'sizereport'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    done();</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>Como definimos o nome dessa task como “default”, ela poderá ser executada com o comando <span class="highlight-text danger">gulp</span> diretamente. Nesse exemplo que utilizei, o build do site é feito para o diretório /public, fique livre para modificar o código para o seu projeto.</p>
-<p>That’s all folks! Obrigado!</p>
+<div class="alert success fa-check-circle"><p>That’s all folks! Obrigado!</p>
+</div>
 <blockquote>
 <p>Links Úteis:<br><a href="bulma.io">Framework Usado Nesse Exemplo</a><br><a href="https://medium.freecodecamp.com/what-to-learn-in-2017-if-youre-a-frontend-developer-b6cfef46effd#.f9xd9e32r" target="_blank" rel="external">2017 is the year that front-end developers should go back and master the basics</a><br><a href="https://brenohq.github.io/2016/07/03/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/">Hospendando um blog no GitHub Pages, usando NodeJS e Hexo</a></p>
 </blockquote>
@@ -486,7 +491,10 @@
 <div id="cover" style="background-image:url('/assets/images/cover-v1.2.0.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/assets/js/script-ek6nsgdgepzd2fthcsvhxh6ihvnzrhosgdgp86eqkipqnmaf01seeedr1oxm.min.js"></script>
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/jquery.fancybox.js"></script>
+<script src="/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
     
