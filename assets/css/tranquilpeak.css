@@ -105,7 +105,12 @@ h5 {
 h6 {
   font-size: 1.6rem; }
 
-p {
+.postShorten-excerpt > p {
+  margin: 0 0 1.5em 0;
+  text-align: justify;
+  text-indent: 5%; }
+
+.main-content-wrap > p {
   margin: 0 0 1.5em 0;
   text-align: justify;
   text-indent: 5%; }
