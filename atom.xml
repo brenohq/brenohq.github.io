@@ -9,7 +9,7 @@
   <id>http://brenohq.github.io/</id>
   
   <author>
-    <name>Breno Henrique de Lima Freitas</name>
+    <name>Breno Henrique</name>
     
   </author>
   
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Usando Gulp.js em um Site Estático de Forma Simples</title>
-    <link href="http://brenohq.github.io/2017/01/21/Usando-Gulp-js-em-um-Site-Estatico/"/>
-    <id>http://brenohq.github.io/2017/01/21/Usando-Gulp-js-em-um-Site-Estatico/</id>
+    <link href="http://brenohq.github.io/Usando-Gulp-js-em-um-Site-Estatico/"/>
+    <id>http://brenohq.github.io/Usando-Gulp-js-em-um-Site-Estatico/</id>
     <published>2017-01-21T19:31:12.000Z</published>
     <updated>2017-01-22T19:52:29.276Z</updated>
     
@@ -75,8 +75,8 @@
   
   <entry>
     <title>Contribuindo com projetos BOINC no seu Arch Linux</title>
-    <link href="http://brenohq.github.io/2016/09/09/Contribuindo-com-projetos-BOINC-no-seu-Arch-Linux/"/>
-    <id>http://brenohq.github.io/2016/09/09/Contribuindo-com-projetos-BOINC-no-seu-Arch-Linux/</id>
+    <link href="http://brenohq.github.io/Contribuindo-com-projetos-BOINC-no-seu-Arch-Linux/"/>
+    <id>http://brenohq.github.io/Contribuindo-com-projetos-BOINC-no-seu-Arch-Linux/</id>
     <published>2016-09-09T14:19:27.000Z</published>
     <updated>2017-01-21T19:38:09.802Z</updated>
     
@@ -122,8 +122,8 @@
   
   <entry>
     <title>Hospendando um blog no GitHub Pages, usando NodeJS e Hexo</title>
-    <link href="http://brenohq.github.io/2016/07/03/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/"/>
-    <id>http://brenohq.github.io/2016/07/03/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/</id>
+    <link href="http://brenohq.github.io/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/"/>
+    <id>http://brenohq.github.io/Hospendando-um-blog-no-GitHub-Pages,-usando-NodeJS-e-Hexo/</id>
     <published>2016-07-03T15:47:24.000Z</published>
     <updated>2016-09-09T16:16:09.285Z</updated>
     
